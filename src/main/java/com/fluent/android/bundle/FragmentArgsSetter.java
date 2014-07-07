@@ -1,4 +1,4 @@
-package bundle;
+package com.fluent.android.bundle;
 
 import android.app.Fragment;
 
