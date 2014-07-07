@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.fluent.android'
+version = '0.1.0'
+
+dependencies {
+    repositories {
+        mavenCentral()
+    }
+
+    compile files("${System.env.ANDROID_HOME}/platforms/android-19/android.jar")
+
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.easytesting:fest-assert-core:+'
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.artifactId = 'fluent-android-bundle'
+    }
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.artifactId = 'fluent-android-bundle'
+        repository(url: "file://$System.env.GITHUB_MAVEN_REPO")
+//        repository(url: "file://${System.env.HOME}/.m2/repository")
+    }
+}
