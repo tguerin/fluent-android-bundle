@@ -8,4 +8,9 @@ public class FragmentArgsSetter {
         fragment.setArguments(fluentBundle.get());
         return fragment;
     }
+
+    public static <T extends android.support.v4.app.Fragment> T setFragmentArguments(T fragment, FluentBundle fluentBundle) {
+        fragment.setArguments(fluentBundle.get());
+        return fragment;
+    }
 }

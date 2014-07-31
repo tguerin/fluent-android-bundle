@@ -8,14 +8,16 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'com.fluent.android'
-version = '0.1.0'
+version = '0.1.1'
 
 dependencies {
     repositories {
+        mavenLocal()
         mavenCentral()
     }
 
-    compile files("${System.env.ANDROID_HOME}/platforms/android-19/android.jar")
+    compile 'android:android:4.4.2_r3'
+    compile 'com.google.android:support-v4:+'
 
     testCompile 'junit:junit:4.11'
     testCompile 'org.easytesting:fest-assert-core:+'
